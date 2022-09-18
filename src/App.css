@@ -1,0 +1,157 @@
+body {
+    background-color: #eeeee4;
+}
+
+#root {    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+    color: #444441;
+    padding: 20px;
+
+    border-radius: 20px;
+    background-color: #D2D2CB;
+    color: white
+}
+
+.App {
+    min-height: 100vh;
+    width: 150vh;
+    box-shadow: #999993 0px 7px 30px 0px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+/* Header */
+
+.Header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    border-bottom: 10px solid #eeeee4;
+    margin-bottom: 5px;
+    border-radius: 20px 20px 0 0;
+}
+
+.Header h2 {
+    padding: 30px;
+}
+
+.Header a {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* Home */
+
+.Home {
+    margin-top: 18%;
+    text-align: center;
+}
+
+.Home h1 {
+    margin: 100px;
+    color: #999993;
+}
+
+.Home .goto_create {
+    padding: 40px;
+    padding-left: 80px;
+    padding-right: 80px;
+
+    font-size: x-large;
+    color: white;
+    background-color: #D2D2CB;
+    border-radius: 20px;
+}
+
+/* New  */
+
+.New {
+    text-align: center;
+}
+
+.New h2 {
+    color:#999993;
+    padding: 50px;
+    margin: 50px;
+    margin-bottom: 10px;
+}
+
+.New input, select {
+    margin-bottom: 50px;
+    padding: 10px;
+
+    width: 100vh;
+    height: 5vh;
+    border-radius: 20px;
+
+    text-align: center;
+    font-size: x-large;
+    
+}
+
+.New button {
+    padding: 30px;
+    padding-left: 70px;
+    padding-right: 70px;
+
+    border: none;
+    border-radius: 20px;
+    background-color: #D2D2CB;
+    color: white;
+    font-size: large;
+
+    cursor: pointer;
+}
+
+/* Create  */
+
+.Create {
+    text-align: center;
+}
+
+.Create h1  {
+    color:#999993;
+    padding: 50px;
+    margin: 50px;
+    margin-bottom: 10px;
+}
+
+.Create h3 {
+    color:#999993;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.Create textarea {
+    margin-bottom: 50px;
+    padding: 20px;
+
+    width: 100vh;
+    height: 40vh;
+    border-radius: 20px;
+    font-size: x-large;
+}
+
+.Create button {
+    padding: 30px;
+    padding-left: 70px;
+    padding-right: 70px;
+
+    border: none;
+    border-radius: 20px;
+    background-color: #D2D2CB;
+    color: white;
+    font-size: larger;
+
+    cursor: pointer;
+}
