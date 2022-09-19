@@ -1,20 +1,40 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const Create = ( {data, nameAndStar} ) => {
+const Create = ( {name, star} ) => {
 
     const [contents, setContents] = useState();
     const handleContents = e => {
         setContents(e.target.value);
     };
 
+    const navigate = useNavigate();
+
     const createCard = () => {
-        // POST 요청
-        // 클라이언트 측 리렌더링
-    }
+        if (window.confirm('카드를 만드시겠습니까?')) {
+            fetch('http://localhost:3001/movie', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name,
+                    date: new Date().toDateString(),
+                    star,
+                    contents,
+                }),
+            })
+            .then(res => {
+                if (res.ok) {
+                    alert('카드가 완성되었습니다!');
+                    navigate('/MyCard');
+                }
+            })
+        }
+    };
 
     return (
         <div className="Create">
-            <h1>스타워즈에 5점을 주셨군요!</h1>
             <h3>자세한 리뷰를 입력해주세요.</h3>
             <textarea value={contents} onChange={handleContents} placeholder="정말 감동적인 작품이었다..."></textarea>
             <div>
