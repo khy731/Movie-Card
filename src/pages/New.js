@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-const New = ( {setDummy} ) => {
+const New = ( {setNameStar} ) => {
 
     const navigate = useNavigate();
 
@@ -17,7 +17,7 @@ const New = ( {setDummy} ) => {
     }
 
     const onClick = () => {
-        setDummy(name, star);
+        setNameStar(name, star);
         navigate('/create');
     }
 
