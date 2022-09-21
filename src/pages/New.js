@@ -24,7 +24,7 @@ const New = ( {setNameStar} ) => {
     return (
         <div className="New">
             <h2>무슨 영화를 보셨나요?</h2>
-            <input name='name' onChange={handleInput} value={name} placeholder="스타워즈 4: 새로운 희망" />
+            <input type='text' name='name' onChange={handleInput} value={name} placeholder="스타워즈 4: 새로운 희망" />
             <h2>몇 점을 주시겠어요?</h2>
             <select name='star' onChange={handleSelect} value={star}>
                 <option>1</option>
