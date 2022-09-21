@@ -6,6 +6,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
     min-height: 100vh;
 }
 
@@ -16,6 +17,7 @@ a {
 .App {
     min-height: 100vh;
     width: 150vh;
+
     box-shadow: #999993 0px 7px 30px 0px;
     background-color: white;
     border-radius: 20px;
@@ -24,40 +26,47 @@ a {
 /* Header */
 
 .Header {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
+
+    height: 10vh;
+
     border-bottom: 10px solid #eeeee4;
-    margin-bottom: 5px;
     border-radius: 20px 20px 0 0;
 }
 
-.Header > h2 {
-    padding: 30px;
-}
-
 .Header  a {
-    margin-top: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-
-    text-align: center;
+    margin: 50px;
     padding: 20px;
-    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+
     background-color: #D2D2CB;
-    color: white
+    color: white;
+    border-radius: 20px;
 }
 
+.Header .leftChild {
+    text-align: start;
+}
+.Header .centerChild {
+    text-align: center;
+}
+.Header .rightChild {
+    text-align: end;
+}
 /* Home */
 
 .Home {
-    margin-top: 18%;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .Home h1 {
-    margin: 100px;
+    margin: 150px;
     color: #999993;
 }
 
@@ -67,6 +76,7 @@ a {
     padding-right: 80px;
 
     font-size: x-large;
+    font-weight: bold;
     color: white;
     background-color: #D2D2CB;
     border-radius: 20px;
@@ -81,7 +91,7 @@ a {
 .New h2 {
     color:#999993;
     padding: 50px;
-    margin: 50px;
+    margin: 100px;
     margin-bottom: 10px;
 }
 
@@ -89,13 +99,18 @@ a {
     margin-bottom: 50px;
     padding: 10px;
 
-    width: 100vh;
+    width: 50vw;
     height: 5vh;
+    border: none;
     border-radius: 20px;
+    background-color: #eeeee4;
 
     text-align: center;
     font-size: x-large;
-    
+}
+
+.New select {
+    width: 20vw;
 }
 
 .New button {
@@ -107,7 +122,7 @@ a {
     border-radius: 20px;
     background-color: #D2D2CB;
     color: white;
-    font-size: large;
+    font-size: x-large;
 
     cursor: pointer;
 }
@@ -118,17 +133,12 @@ a {
     text-align: center;
 }
 
-.Create h1  {
-    color:#999993;
-    padding: 50px;
-    margin: 50px;
-    margin-bottom: 10px;
-}
-
-.Create h3 {
+.Create h2 {
+    margin-top: 100px;
+    margin-bottom: 30px;
+    
     color:#999993;
     padding: 10px;
-    margin-bottom: 30px;
 }
 
 .Create textarea {
@@ -137,7 +147,10 @@ a {
 
     width: 100vh;
     height: 40vh;
+
+    border: none;
     border-radius: 20px;
+    background-color: #eeeee4;
     font-size: x-large;
 }
 
@@ -150,7 +163,8 @@ a {
     border-radius: 20px;
     background-color: #D2D2CB;
     color: white;
-    font-size: larger;
+    font-size: x-large;
+    font-weight: bold;
 
     cursor: pointer;
 }
@@ -161,19 +175,19 @@ a {
     margin: 70px;
     margin-top: 50px;
     padding: 20px;
+    
     border-radius: 20px;
 }
 
 .MyCard > div {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
 }
 
 .MyCard h2 {
     color: #62625F;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 50px;
 }
 
 .AllCard {
@@ -181,8 +195,9 @@ a {
 }
 
 .AllCard h3 {
-    text-align: center;
     padding-bottom: 30px;
+
+    text-align: center;
     color: #62625F;
     border-bottom: 1px solid #999993;
 }
@@ -190,33 +205,59 @@ a {
 /* CardList */
 
 .CardList {
-    width: 20vw;
-    min-height: 15vh;
+    margin: 30px;
     padding: 30px;
     margin-bottom: 30px;
+
+    max-width: 20vw;
+    min-height: 10vh;
     background-color: #eeeee4;
     border-radius: 20px;
 }
 
-.CardList > h3{
+.CardList > h3 {
     margin-bottom: 50px;
 }
 
 /* Card */
 
 .Card {
-    width: 20vw;
     margin: 0 auto;
-    min-height: 15vh;
+    margin-top: 130px;
     padding: 30px;
-    margin-bottom: 30px;
+
+    text-align: center;
+    color: #999993;
+    width: 20vw;
+    min-height: 15vh;
     background-color: #eeeee4;
     border-radius: 20px;
 }
 
 .Card h3 {
-    text-align: center;
     padding-bottom: 30px;
-    color: #62625F;
     border-bottom: 1px solid #999993;
+
+    color: #62625F;
+}
+
+.Card textarea {
+    width: 20vw;
+    height: 10vh;
+}
+
+.Card button {
+    margin-top: 30px;
+    margin-right: 20px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    border: none;
+    border-radius: 20px;
+    background-color: #D2D2CB;
+    color: white;
+    font-size: large;
+
+    cursor: pointer;
 }
