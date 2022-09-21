@@ -4,11 +4,12 @@ import { useNavigate } from 'react-router-dom';
 const Create = ( {name, star} ) => {
 
     const [contents, setContents] = useState();
+
+    const navigate = useNavigate();
+
     const handleContents = e => {
         setContents(e.target.value);
     };
-
-    const navigate = useNavigate();
 
     const createCard = () => {
         if (window.confirm('카드를 만드시겠습니까?')) {
@@ -19,7 +20,7 @@ const Create = ( {name, star} ) => {
                 },
                 body: JSON.stringify({
                     name,
-                    date: new Date().toDateString(),
+                    date: new Date().toLocaleString(),
                     star,
                     contents,
                 }),
@@ -35,7 +36,7 @@ const Create = ( {name, star} ) => {
 
     return (
         <div className="Create">
-            <h3>자세한 리뷰를 입력해주세요.</h3>
+            <h2>자세한 리뷰를 입력해주세요.</h2>
             <textarea value={contents} onChange={handleContents} placeholder="정말 감동적인 작품이었다..."></textarea>
             <div>
                 <button onClick={createCard}>카드 만들기</button>
