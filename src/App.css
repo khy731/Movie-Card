@@ -202,6 +202,14 @@ a {
     border-bottom: 1px solid #999993;
 }
 
+.MyCard button {
+    background-color: white;
+    border: 0;
+    outline: 0;
+
+    cursor: pointer;
+}
+
 /* CardList */
 
 .CardList {
@@ -223,13 +231,13 @@ a {
 
 .Card {
     margin: 0 auto;
-    margin-top: 130px;
     padding: 30px;
+
+    min-width: 20vw;
+    min-height: 20vh;
 
     text-align: center;
     color: #999993;
-    width: 20vw;
-    min-height: 15vh;
     background-color: #eeeee4;
     border-radius: 20px;
 }
@@ -260,4 +268,19 @@ a {
     font-size: large;
 
     cursor: pointer;
+}
+
+/* Modal */
+.Modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: rgba(0,0,0,0.3);
 }
