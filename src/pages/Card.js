@@ -1,12 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import useFetch from "../hooks/useFetch";
 
 const Card = ( ) => {
 
     const { id } = useParams();
 
-    const matchedData = useFetch(`http://localhost:3001/movie/${id}`);
+    const [matchedData, setMatchedData] = useState([]);
+
+    const getData = async() => {
+        const res = await fetch(`http://localhost:3001/movie/${id}`)
+                    .then(res => res.json());
+        setMatchedData(res);
+    };
+
+    useEffect(() => {
+        getData();
+    }, []);
 
     const [isEdit, setIsEdit] = useState(false);
     const [localContents, setLocalContents] = useState(matchedData.contents);
