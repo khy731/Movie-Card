@@ -44,6 +44,10 @@ const Card = ( ) => {
         .then(res => {
             if(res.ok) {
                 toggleIsEdit();
+                setMatchedData({
+                    ...matchedData,
+                    contents: localContents,
+                });
             }
         })
     };
