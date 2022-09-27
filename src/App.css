@@ -190,18 +190,6 @@ a {
     margin-bottom: 50px;
 }
 
-.AllCard {
-    color: #999993;
-}
-
-.AllCard h3 {
-    padding-bottom: 30px;
-
-    text-align: center;
-    color: #62625F;
-    border-bottom: 1px solid #999993;
-}
-
 .MyCard button {
     background-color: white;
     border: 0;
@@ -220,11 +208,17 @@ a {
     max-width: 20vw;
     min-height: 10vh;
     background-color: #eeeee4;
+    color: #999993;
     border-radius: 20px;
 }
 
 .CardList > h3 {
     margin-bottom: 50px;
+    padding-bottom: 30px;
+
+    text-align: center;
+    color: #62625F;
+    border-bottom: 1px solid #999993;
 }
 
 /* Card */
@@ -233,8 +227,10 @@ a {
     margin: 0 auto;
     padding: 30px;
 
-    min-width: 20vw;
+    min-width: 15vw;
+    max-width: 20vw;
     min-height: 20vh;
+    max-height: 40vh;
 
     text-align: center;
     color: #999993;
