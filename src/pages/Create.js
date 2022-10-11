@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import ColorPalette from '../components/ColorPalette';
+import Preview from '../components/Preview';
 
 const Create = ( {name, star} ) => {
 
@@ -36,11 +38,18 @@ const Create = ( {name, star} ) => {
 
     return (
         <div className="Create">
-            <h2>자세한 리뷰를 입력해주세요.</h2>
-            <textarea value={contents} onChange={handleContents} placeholder="정말 감동적인 작품이었다..."></textarea>
-            <div>
-                <button onClick={createCard}>카드 만들기</button>
-            </div>
+            <aside>
+                <Preview />
+                <ColorPalette />
+            </aside>
+            <article>
+                <h2>자세한 리뷰를 입력해주세요.</h2>
+                <textarea value={contents} onChange={handleContents} placeholder="정말 감동적인 작품이었다..."></textarea>
+                <div>
+                    <button onClick={createCard}>카드 만들기</button>
+                </div>
+            </article>
+
         </div>
     );
 };
