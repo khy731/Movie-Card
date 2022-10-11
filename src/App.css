@@ -180,8 +180,11 @@ a {
 }
 
 .MyCard > div {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20em, 20vw));
+    grid-auto-rows: minmax(20vh, auto);
+    gap: 3em;
+    justify-content: center;
 }
 
 .MyCard h2 {
@@ -200,13 +203,16 @@ a {
 
 /* CardList */
 
+.AllCard {
+    margin-left: 10px;
+}
+
 .CardList {
-    margin: 30px;
     padding: 30px;
     margin-bottom: 30px;
 
-    max-width: 20vw;
-    min-height: 10vh;
+    word-wrap: break-word;
+
     background-color: #eeeee4;
     color: #999993;
     border-radius: 20px;
@@ -224,7 +230,6 @@ a {
 /* Card */
 
 .Card {
-    margin: 0 auto;
     padding: 30px;
 
     min-width: 15vw;
@@ -268,9 +273,9 @@ a {
 
 /* Modal */
 .Modal {
-    display: flex;
-    align-items: center;
+    display: flex !important;
     justify-content: center;
+    align-items: center;
 
     position: absolute;
     top: 0;
