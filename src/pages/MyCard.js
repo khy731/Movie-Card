@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useFetch from "../hooks/useFetch";
-import CardList from "./CardList";
-import Modal from "./Modal";
+import CardList from "../components/CardList";
+import Modal from "../components/Modal";
 
 const MyCard = ( ) => {
 
