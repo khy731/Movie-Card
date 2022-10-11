@@ -130,7 +130,14 @@ a {
 /* Create  */
 
 .Create {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     text-align: center;
+}
+
+.Create aside {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
 }
 
 .Create h2 {
@@ -145,7 +152,7 @@ a {
     margin-bottom: 50px;
     padding: 20px;
 
-    width: 100vh;
+    width: 70vh;
     height: 40vh;
 
     border: none;
@@ -169,10 +176,18 @@ a {
     cursor: pointer;
 }
 
+.ColorPalette {
+   
+}
+
+.Preview {
+    /*   */
+}
+
 /* MyCard */
 
 .MyCard {
-    margin: 70px;
+    margin: 50px;
     margin-top: 50px;
     padding: 20px;
     
