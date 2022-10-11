@@ -27,7 +27,7 @@ a {
 
 .Header {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(350px, auto));
     align-items: center;
 
     height: 10vh;
