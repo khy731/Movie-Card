@@ -6,7 +6,6 @@ import New from './pages/New';
 import Create from './pages/Create';
 import Header from './components/Header';
 import MyCard from './pages/MyCard';
-import Card from './pages/Card';
 function App() {
 
     const [data, setData] = useState({});
@@ -27,7 +26,6 @@ function App() {
                     <Route path='/new' element={<New setNameStar={setNameStar}/>} />
                     <Route path='/create' element={<Create {...data} />}/>
                     <Route path='/mycard' element={<MyCard />} />
-                    <Route path='/card/:id' element={<Card />} />
                 </Routes>
             </BrowserRouter>
         </div>
