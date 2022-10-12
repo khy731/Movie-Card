@@ -190,7 +190,9 @@ a {
 }
 
 .Preview {
-    /*   */
+    display: grid;
+    place-items: center;
+    word-wrap: break-word;
 }
 
 /* MyCard */

@@ -22,7 +22,7 @@ const MyCard = ( ) => {
                             setIsModal(true);
                             setSelectedData(v);
                         }}>
-                            <CardList data={v}/>
+                            <CardList data={v} color={v.color}/>
                         </button>
                     ))}
             </div>

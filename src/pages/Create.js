@@ -8,6 +8,13 @@ const Create = ( {name, star} ) => {
     const [contents, setContents] = useState();
     const [color, setColor] = useState('');
 
+    const priviewInfo = {
+        name,
+        star,
+        contents,
+        color
+    };
+
     const navigate = useNavigate();
 
     const handleContents = e => {
@@ -41,8 +48,7 @@ const Create = ( {name, star} ) => {
     return (
         <div className="Create">
             <aside>
-                <Preview />
-                <ColorPalette />
+                <Preview {...priviewInfo} />
                 <ColorPalette setColor={setColor} />
             </aside>
             <article>
