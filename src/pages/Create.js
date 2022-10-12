@@ -6,6 +6,7 @@ import Preview from '../components/Preview';
 const Create = ( {name, star} ) => {
 
     const [contents, setContents] = useState();
+    const [color, setColor] = useState('');
 
     const navigate = useNavigate();
 
@@ -25,6 +26,7 @@ const Create = ( {name, star} ) => {
                     date: new Date().toLocaleString(),
                     star,
                     contents,
+                    color
                 }),
             })
             .then(res => {
@@ -41,6 +43,7 @@ const Create = ( {name, star} ) => {
             <aside>
                 <Preview />
                 <ColorPalette />
+                <ColorPalette setColor={setColor} />
             </aside>
             <article>
                 <h2>자세한 리뷰를 입력해주세요.</h2>

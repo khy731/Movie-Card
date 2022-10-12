@@ -161,7 +161,7 @@ a {
     font-size: x-large;
 }
 
-.Create button {
+.Create article div button {
     padding: 30px;
     padding-left: 70px;
     padding-right: 70px;
@@ -176,8 +176,17 @@ a {
     cursor: pointer;
 }
 
-.ColorPalette {
-   
+.Create aside {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.Color {
+    padding: 50px;
+    margin: 10px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
 }
 
 .Preview {
