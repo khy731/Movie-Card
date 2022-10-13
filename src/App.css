@@ -181,12 +181,26 @@ a {
     padding-right: 50px;
 }
 
+.AllColor button {
+    border: none;
+    background-color: white;
+}
+
 .Color {
     padding: 50px;
     margin: 10px;
     border: none;
     border-radius: 50px;
     cursor: pointer;
+}
+
+.ColorSelected {
+    padding: 47px;
+    margin: 10px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    border: 3px solid #D2D2CB;
 }
 
 .Preview {

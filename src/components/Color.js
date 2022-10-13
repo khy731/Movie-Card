@@ -1,17 +1,14 @@
-import { useState } from "react";
+const Color = ( {id, color, isSelected} ) => {
 
-const Color = ( {id, color, setColor, colorPush, oneColor} ) => {
-
-    console.log(id, oneColor);
-
-    const handleClick = () => {
-        setColor(color);
-        colorPush(id);
-    };
+    console.log(isSelected);
 
     return (
-        <button className="Color" style={{backgroundColor:`${color}`, border:`${oneColor === id ? `solid 1px gray` : ''}`}} onClick={handleClick} />
+        <div className={`Color${isSelected === id ? 'Selected' : ''}`} style={{backgroundColor:`${color}`}} />
     );
+};
+
+Color.defaultProps = {
+    color: '#eeeee4',
 };
 
 export default Color;

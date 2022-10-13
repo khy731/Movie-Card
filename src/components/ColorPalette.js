@@ -2,13 +2,9 @@ import { useRef, useState } from "react";
 import Color from "./Color";
 
 const ColorPalette = ( {setColor} ) => {
-    const [selectedColor, setSelectedColor] = useState([]);
+    const [isSelected, setIsSelected] = useState('');
 
-    const colorPush = (id) => {
-        setSelectedColor([...selectedColor, id]);
-    };
-
-    const oneColor =  selectedColor.slice(-1)[0];
+    const id = useRef(0);
 
     const allColors = [
         '#EAECEE',
@@ -26,7 +22,17 @@ const ColorPalette = ( {setColor} ) => {
             <h2>컬러 팔레트</h2>
             <div className="AllColor">
                 {allColors.map((v,i) => {
-                    return (<Color key={i} id={i} color={v} setColor={setColor} colorPush={colorPush} oneColor={oneColor} />);
+                    id.current++;
+                    return (<button key={id.current} onClick={() => {
+                        setColor(v);
+                        setIsSelected(i);
+                        if (isSelected === i) {
+                            setColor('#eeeee4');
+                            setIsSelected('');   
+                        }
+                    }}>
+                        <Color id={i} color={v} isSelected={isSelected} />
+                    </button>);
                 })}
             </div>
         </div>

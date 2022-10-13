@@ -20,7 +20,7 @@ const Create = ( {name, star} ) => {
     const handleContents = e => {
         setContents(e.target.value);
     };
-
+    
     const createCard = () => {
         if (window.confirm('카드를 만드시겠습니까?')) {
             fetch('http://localhost:3001/movie', {
@@ -58,7 +58,6 @@ const Create = ( {name, star} ) => {
                     <button onClick={createCard}>카드 만들기</button>
                 </div>
             </article>
-
         </div>
     );
 };
