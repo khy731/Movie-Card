@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const New = ( {setNameStar} ) => {
 
@@ -7,6 +7,27 @@ const New = ( {setNameStar} ) => {
 
     const [name, setName] = useState('');
     const [star, setStar] = useState(1);
+
+    const getSearchMovie = async (search) => {
+        const ID_KEY = 'xmX4rXBFgRySFQDMBN1R';
+        const SECRET_KEY = '13MEqeEJNs';
+
+        const response = await fetch(`https://cors-anywhere.herokuapp.com/https://openapi.naver.com/v1/search/movie.json?query=${search}`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Naver-Client-Id': ID_KEY,
+                'X-Naver-Client-Secret': SECRET_KEY
+            }
+        })
+        .then(res => res.json())
+        .catch(err => console.error(err));
+
+        console.log(response);
+    };
+
+    useEffect(()=> {
+        getSearchMovie("스");
+    }, []);
 
     const handleInput = e => {
         setName(e.target.value);
