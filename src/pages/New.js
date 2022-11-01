@@ -12,6 +12,8 @@ const New = ( {setNameStar} ) => {
     const [showList, setShowList] = useState(false);
 
     const getSearchMovie = async (search) => {
+        if (!search) return;
+
         const ID_KEY = 'xmX4rXBFgRySFQDMBN1R';
         const SECRET_KEY = '13MEqeEJNs';
 
@@ -25,13 +27,29 @@ const New = ( {setNameStar} ) => {
         .then(res => res.json())
         .catch(err => console.error(err));
 
-        setShowList(true);
-        setAutoList(response.items.slice(0,7));
+        setAutoList(response.items);
+    };
+
+    const autoComplete = (query, search) => {
+        const item = search?.replace(/<b>/gi,"").replace(/<\/b>/gi,"");
+        return(
+            item.includes(query) ?
+            <>
+                {item.split(query)[0]}
+                <span style={{ color: "#3F51B5" }}>{query}</span>
+                {item.split(query)[1]}
+            </>
+            :
+            <>
+                {item}
+            </>
+        ); 
     };
 
     useEffect(()=> {
         const debounce = setTimeout(() => {
             getSearchMovie(name);
+            setShowList(true);
         }, 200);
         return () => {
             clearTimeout(debounce);
@@ -65,11 +83,13 @@ const New = ( {setNameStar} ) => {
             {showList && <div className='AutoList'>
                 {autoList.map((v,i) => {
                     id.current++;
+                    const item = autoComplete(name, v.title);
+
                     return(
                         <div key={id.current} value={v.title} onClick={() => {
                             handleDropdownClick(i);
                         }}>
-                            <Dropdown movieNm={v.title} />
+                            <Dropdown movieNm={item} />
                         </div>
                     );
                 }
