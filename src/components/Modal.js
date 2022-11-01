@@ -62,7 +62,9 @@ const Modal = ( {setIsModal, data} ) => {
     return (
         <div className="Modal">
             <div className="Card">
-                <button onClick={handleClick}>X</button>
+                <div>
+                    <button onClick={handleClick}>X</button>
+                </div>
                 <h3>{matchedData.name}에 {matchedData.star}점을 주셨군요!</h3>
                 <div>
                     { isEdit ? 
@@ -75,7 +77,11 @@ const Modal = ( {setIsModal, data} ) => {
                 <div>
                     { isEdit ?
                     <div>
-                        <button onClick={toggleIsEdit}>수정 취소</button>
+                        <button onClick={()=> {
+                            if (window.confirm('수정을 취소하시겠습니까?')) {
+                                toggleIsEdit();
+                            }
+                        }}>수정 취소</button>
                         <button onClick={editCard}>수정 완료</button>
                     </div>
                         :
