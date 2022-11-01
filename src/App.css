@@ -255,10 +255,6 @@ a {
     cursor: pointer;
 }
 
-.MyCard button:hover {
-    opacity: 0.7;
-}
-
 /* CardList */
 
 .AllCard {
@@ -272,6 +268,14 @@ a {
     background-color: #eeeee4;
     color: #999993;
     border-radius: 20px;
+}
+
+.CardList:hover {
+    opacity: 0.7;
+}
+
+.CardList::after {
+    opacity: 0;
 }
 
 .CardList > h3 {
@@ -308,7 +312,7 @@ a {
 }
 
 .Card textarea {
-    width: 500px;
+    width: 400px;
     min-height: 10vh;
     max-height: 50vh;
 }
@@ -326,6 +330,10 @@ a {
     font-size: large;
 
     cursor: pointer;
+}
+
+.Card button:hover {
+    background-color:#979794;
 }
 
 /* Modal */
