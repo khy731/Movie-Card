@@ -25,17 +25,14 @@ const New = ( {setNameStar} ) => {
         .then(res => res.json())
         .catch(err => console.error(err));
 
-        const lists = response.items.slice(0,7);
         setShowList(true);
-        setAutoList(lists);
+        setAutoList(response.items.slice(0,7));
     };
 
     useEffect(()=> {
         const debounce = setTimeout(() => {
-            if(name) {
-                getSearchMovie(name);
-            }
-        },100);
+            getSearchMovie(name);
+        }, 200);
         return () => {
             clearTimeout(debounce);
         };
