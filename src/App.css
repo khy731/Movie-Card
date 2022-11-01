@@ -30,7 +30,7 @@ a {
     grid-template-columns: repeat(3, minmax(350px, auto));
     align-items: center;
 
-    height: 10vh;
+    height: 150px;
 
     border-bottom: 10px solid #eeeee4;
     border-radius: 20px 20px 0 0;
@@ -45,6 +45,10 @@ a {
     background-color: #D2D2CB;
     color: white;
     border-radius: 20px;
+}
+
+.Header a:hover {
+    background-color:#979794;
 }
 
 .Header .leftChild {
@@ -80,6 +84,10 @@ a {
     color: white;
     background-color: #D2D2CB;
     border-radius: 20px;
+}
+
+.Home .goto_create:hover {
+    background-color:#979794;
 }
 
 /* New  */
@@ -124,6 +132,10 @@ a {
     cursor: pointer;
 }
 
+.New button:hover {
+    background-color:#979794;
+}
+
 /* Create  */
 
 .Create {
@@ -149,8 +161,8 @@ a {
     margin-bottom: 50px;
     padding: 20px;
 
-    width: 70vh;
-    height: 40vh;
+    width: 900px;
+    height: 500px;
 
     border: none;
     border-radius: 20px;
@@ -171,6 +183,10 @@ a {
     font-weight: bold;
 
     cursor: pointer;
+}
+
+.Create article div button:hover {
+    background-color:#979794;
 }
 
 .Create aside {
@@ -238,6 +254,10 @@ a {
     cursor: pointer;
 }
 
+.MyCard button:hover {
+    opacity: 0.7;
+}
+
 /* CardList */
 
 .AllCard {
@@ -267,11 +287,12 @@ a {
 /* Card */
 
 .Card {
+    display: grid;
+    grid-template-rows: 0.5fr 1fr 2fr 0.5fr;
     padding: 30px;
 
-    min-width: 15vw;
-    max-width: 20vw;
-    min-height: 20vh;
+    width: 500px;
+    min-height: 10vh;
     max-height: 40vh;
 
     text-align: center;
@@ -293,8 +314,7 @@ a {
 }
 
 .Card button {
-    margin-top: 30px;
-    margin-right: 20px;
+    margin: 10px;
     padding: 10px;
     padding-left: 20px;
     padding-right: 20px;
