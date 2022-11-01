@@ -12,8 +12,6 @@ const New = ( {setNameStar} ) => {
     const [showList, setShowList] = useState(false);
 
     const getSearchMovie = async (search) => {
-        if(!search) return;
-
         const ID_KEY = 'xmX4rXBFgRySFQDMBN1R';
         const SECRET_KEY = '13MEqeEJNs';
 
@@ -33,7 +31,6 @@ const New = ( {setNameStar} ) => {
     };
 
     useEffect(()=> {
-        // 디바운스
         const debounce = setTimeout(() => {
             if(name) {
                 getSearchMovie(name);
@@ -42,18 +39,9 @@ const New = ( {setNameStar} ) => {
         return () => {
             clearTimeout(debounce);
         };
-
-        // 스로틀링
-/*         let timerId;
-
-        return () => {
-            if (timerId) return;
-            timerId = setTimeout(()=> {
-                getSearchMovie(name);
-                timerId = null;
-            }, 300);
-        } */
     }, [name]);
+
+    const id = useRef(-1);
 
     const handleInput = e => {
         setName(e.target.value);
@@ -67,7 +55,6 @@ const New = ( {setNameStar} ) => {
         setNameStar(name, star);
         navigate('/create');
     }
-    const id = useRef(-1);
 
     const handleDropdownClick = id => {
         setName(autoList[id].title?.replace(/<b>/gi,"").replace(/<\/b>/gi,""));
