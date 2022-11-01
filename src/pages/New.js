@@ -8,8 +8,12 @@ const New = ( {setNameStar} ) => {
 
     const [name, setName] = useState('');
     const [star, setStar] = useState(1);
+    const [autoList, setAutoList] = useState([]);
+    const [showList, setShowList] = useState(false);
 
     const getSearchMovie = async (search) => {
+        if(!search) return;
+
         const ID_KEY = 'xmX4rXBFgRySFQDMBN1R';
         const SECRET_KEY = '13MEqeEJNs';
 
@@ -23,12 +27,33 @@ const New = ( {setNameStar} ) => {
         .then(res => res.json())
         .catch(err => console.error(err));
 
-        console.log(response);
+        const lists = response.items.slice(0,7);
+        setShowList(true);
+        setAutoList(lists);
     };
 
     useEffect(()=> {
-        getSearchMovie("스");
-    }, []);
+        // 디바운스
+        const debounce = setTimeout(() => {
+            if(name) {
+                getSearchMovie(name);
+            }
+        },100);
+        return () => {
+            clearTimeout(debounce);
+        };
+
+        // 스로틀링
+/*         let timerId;
+
+        return () => {
+            if (timerId) return;
+            timerId = setTimeout(()=> {
+                getSearchMovie(name);
+                timerId = null;
+            }, 300);
+        } */
+    }, [name]);
 
     const handleInput = e => {
         setName(e.target.value);

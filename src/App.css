@@ -96,21 +96,18 @@ a {
 }
 
 .New input, select {
-    margin-bottom: 50px;
     padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
 
-    width: 50vw;
-    height: 5vh;
+    width: 1006px;
+    height: 80px;
     border: none;
     border-radius: 20px;
     background-color: #eeeee4;
 
     text-align: center;
     font-size: x-large;
-}
-
-.New select {
-    width: 20vw;
 }
 
 .New button {
@@ -324,4 +321,31 @@ a {
     right: 0;
 
     background-color: rgba(0,0,0,0.3);
+}
+
+/* AutoList */
+
+.AutoList {
+    margin: 0 auto;
+
+    width: 1000px;
+    
+    border: 3px solid #eeeee4;
+    border-top: none;
+    border-radius: 0 0 20px 20px;
+    text-align: center;
+    font-size: large;
+}
+
+.Dropdown {
+    padding: 15px;
+    cursor: pointer;
+}
+
+.Dropdown:hover {
+    background-color: #eeeee4;
+}
+
+.CloseButton {
+    padding: 10px;
 }
