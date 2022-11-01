@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import Dropdown from '../components/Dropdown';
 
 const New = ( {setNameStar} ) => {
 
@@ -41,11 +42,30 @@ const New = ( {setNameStar} ) => {
         setNameStar(name, star);
         navigate('/create');
     }
+    const id = useRef(-1);
+
+    const handleDropdownClick = id => {
+        setName(autoList[id].title?.replace(/<b>/gi,"").replace(/<\/b>/gi,""));
+        setAutoList([]);
+    }
 
     return (
         <div className="New">
             <h2>무슨 영화를 보셨나요?</h2>
-            <input type='text' name='name' onChange={handleInput} value={name} placeholder="스타워즈 4: 새로운 희망" />
+            <input type='search' name='name' onChange={handleInput} value={name} placeholder="스타워즈 4: 새로운 희망" />
+            {showList && <div className='AutoList'>
+                {autoList.map((v,i) => {
+                    id.current++;
+                    return(
+                        <div key={id.current} value={v.title} onClick={() => {
+                            handleDropdownClick(i);
+                        }}>
+                            <Dropdown movieNm={v.title} />
+                        </div>
+                    );
+                }
+                )}
+            </div>}
             <h2>몇 점을 주시겠어요?</h2>
             <select name='star' onChange={handleSelect} value={star}>
                 <option>1</option>
